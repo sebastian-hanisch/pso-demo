@@ -1,5 +1,7 @@
 # 🧬 Partikelschwarm-Optimierung – Geschwindigkeit statt Mutation
 
+**[→ Demo live ausprobieren](https://sebastianhanisch-pso-demo.streamlit.app/)**
+
 Achtes Stück der **Populations-Metaheuristiken-Linie** der "Konzepte"-Reihe im Portfolio von [Sebastian Hanisch](https://sebastianhanisch.net) –
 Operations Research und Machine Learning. Dritter Kontrast zu [genetic-algorithm-demo](https://sebastianhanisch-genetic-algorithm-demo.streamlit.app/)
 für kontinuierliche Landschaften, Geschwister von [cma-es-demo](https://sebastianhanisch-cma-es-demo.streamlit.app/)
