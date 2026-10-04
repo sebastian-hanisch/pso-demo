@@ -50,7 +50,8 @@ def test_comparison_experiment_headline_claims():
     assert report["ga_small"] == C.GA_SUCCESS_SMALL == 0.55 and report["ga_large"] == C.GA_SUCCESS_LARGE == 0.95
     assert report["cma_small"] == C.CMA_SUCCESS_SMALL == 0.15
     assert report["de_small"] == C.DE_SUCCESS_SMALL == 1.00
-    # Kernbefund: PSO liegt bei BEIDEN Budgets klar vor GA und CMA-ES
+    # Kernbefund: PSO liegt bei BEIDEN Budgets klar vor CMA-ES und beim kleinen Budget klar vor GA (beim großen Budget
+    # liegt GA mit 95 % leicht vor PSO mit 90 %)
     assert report["pso_small"] > report["ga_small"] + 0.1
     assert report["pso_small"] > report["cma_small"] + 0.5
     assert report["pso_large"] > report["cma_large"] + 0.5

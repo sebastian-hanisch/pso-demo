@@ -167,7 +167,7 @@ st.markdown("---")
 st.subheader("📐 Wie stark hängt die Trefferquote von Schwarmgröße und Trägheitsgewicht ab?")
 sweep_param = st.selectbox("Welcher Regler soll durchgefahren werden?", list(C.SWEEP_LABELS), format_func=lambda k: C.SWEEP_LABELS[k], key="sweep_select")
 base_sweep = Settings(seed=settings.seed, gens=settings.gens, pop=settings.pop, w=settings.w, c1=settings.c1, c2=settings.c2)
-if st.button("Sweep über 5 feste Vehikel berechnen (dauert etwa 10 bis 30 Sekunden)", key="sweep_start"):
+if st.button("Sweep über 5 Zufallsläufe berechnen (dauert etwa 10 bis 30 Sekunden)", key="sweep_start"):
     st.session_state["sweep_done"] = st.session_state.get("sweep_done", set()) | {(sweep_param, base_sweep)}
 if (sweep_param, base_sweep) in st.session_state.get("sweep_done", set()):
     with st.spinner("Rechne den Sweep..."):
@@ -196,7 +196,7 @@ if st.session_state.get("comparison_on"):
     c2.metric(f"PSO, {report['pso_large_evals']} Auswertungen", f"{report['pso_large']:.0%}", delta=f"GA {report['ga_large']:.0%} · CMA-ES {report['cma_large']:.0%} · DE {report['de_large']:.0%}", delta_color="off")
     st.warning(
         "**Ehrlicher Befund:** PSO trifft hier mit Standardeinstellungen bei BEIDEN Budgets zuverlässig die globale "
-        "Mulde - klar vor GA und CMA-ES, knapp hinter DE. Wie DE hält PSO eine über den Raum verstreute Population "
+        "Mulde - klar vor CMA-ES, beim kleinen Budget auch klar vor GA (beim großen liegt GA leicht vorn), knapp hinter DE. Wie DE hält PSO eine über den Raum verstreute Population "
         "(hier: einen Schwarm), aber die Bewegung läuft über Geschwindigkeit statt Differenzvektor-Mutation - ein "
         "dritter, unabhängiger Mechanismus, der auf dieser Landschaft ähnlich gut funktioniert. Kein Beweis "
         "genereller Überlegenheit gegenüber GA/CMA-ES (siehe cma-es-demo/differential-evolution-demo für deren "
@@ -269,6 +269,6 @@ Implementiert in `pso_algorithm.py` (Geschwindigkeit, Position, pbest/gbest, Hau
 st.markdown("---")
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
-    "Operations Research und Machine Learning. Interesse an einer maßgeschneiderten Lösung für "
-    "Ihr Unternehmen? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html)"
+    "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
+    "Mehr zur Reihe: [Populations-Metaheuristiken: GA bis Memetic](https://sebastianhanisch.net/konzepte-populations-metaheuristiken.html)."
 )
