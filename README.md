@@ -68,7 +68,9 @@ geprüft.
 
 ## Tests
 
-61 Tests (`pytest tests/ -v`): Geschwindigkeits-/Positions-Update und Diversität per Handrechnung geprüft, Konvergenz
+70 Tests (`pytest tests/ -v`): Geschwindigkeits-/Positions-Update und Diversität per Handrechnung geprüft, die ganze
+Schwarm-Trajektorie (Positionen, Fitness, gbest je Generation) gegen eine Partikel-für-Partikel-Schleifenimplementierung
+auf demselben Zufallsstrom (`test_oracle_pso.py`), Konvergenz
 auf Kugel-, Ellipsoid- und Rastrigin-Funktion (eigene Implementierung UND `pyswarms` im Vergleich auf der
 Kugel-Funktion), Szenario-Erzeugung bitidentisch zu den Vorgänger-Demos geprüft, AppTest-Rauchtests (jedes Preset,
 Generation-Slider inkl. Abspielen, Permalink-Grenzen, beide Experimente + Sweep auf Abruf) und `test_claims.py`
